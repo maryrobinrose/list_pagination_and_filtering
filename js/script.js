@@ -75,22 +75,27 @@ const appendPageLinks = (list) => {
     let li = document.createElement('li');
     let a = document.createElement('a');
     //Add pageNumber to a
-    let pageNumber = i + 1;
-    a.textContent = pageNumber;
+    a.textContent = i + 1;
+    a,href = '#';
     li.appendChild(a);
     ul.appendChild(li);
+
+
+    //Display appropriate pages when clicked
+    a.addEventListener('click', (event) => {
+      event.preventDefault();
+      let aTag = document.querySelector('a');
+      if (event.target.elementId = 'a') {
+        showPage(studentList);
+        }
+      });
+      for (let i = 1; i <= aTag.length; i += 1) {
+        a.removeChild();
+      }
   }
 
-  //Add buttons to 'a'
-  let buttons = document.querySelectorAll('a');
-    buttons.createElement('button');
-      button.addEventListener('click', () => {
-        showPage(studentList)
-        event.target
-      }
 }
-
-showPage(studentList, page);
+showPage(studentList);
 appendPageLinks(studentList);
 
 
