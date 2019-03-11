@@ -62,21 +62,26 @@ const showPage = (list, page) => {
 const appendPageLinks = (list) => {
   //Sets maximum number of students per page
   const totalPages = Math.ceil(list.length / 10);
+
   //Creates a div and sets class name to 'pagination'
   const pageDiv = document.createElement('div');
   pageDiv.className = 'pagination';
+  //Append it to the .page div
+  let page = document.querySelector('.page');
+  page.appendChild(pageDiv);
 
   //Creates ul to go in div
   const ul = document.createElement('ul');
   pageDiv.appendChild(ul);
 
-  //Loop over pages and add li and a for pagination links
+  //Loop over pages and add li and a tags for pagination links
   for (let i = 1; i <= totalPages.length; i += 1) {
     let li = document.createElement('li');
     let a = document.createElement('a');
-    //Add pageNumber to a
+    //Add page number text
     a.textContent = i + 1;
-    a,href = '#';
+    a.href = '#';
+    //Append a tag to li and li to ul
     li.appendChild(a);
     ul.appendChild(li);
 
@@ -89,7 +94,7 @@ const appendPageLinks = (list) => {
         showPage(studentList);
         }
       });
-      for (let i = 1; i <= aTag.length; i += 1) {
+      for (let i = 1; i <= a.length; i += 1) {
         a.removeChild();
       }
   }
