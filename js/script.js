@@ -57,11 +57,22 @@ const showPage = (list, page) => {
    functionality to the pagination buttons.
 ***/
 const appendPageLinks = (list) => {
-  list / 10
-  createDiv
-  appendChild(div)
-  for () {
-    li, a tags
+  const totalPages = Math.ceil(list.length / 10);
+  const pageDiv = document.createElement('div');
+  const ul = document.createElement('ul');
+  pageDiv.className = 'pagination';
+
+  pageDiv.appendChild(pageLinks);
+
+  for (let i = 1; i <= totalPages.length; i += 1) {
+    let li = document.createElement('li');
+    let a = document.createElement('a');
+    document.addEventListener('click', () => {
+      document.getElementById('a').innerHTML = i + 1;
+    }
+     li.appendChild(a);
+     ul.appendChild(li)
+;
   }
   event.target
 }
