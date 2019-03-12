@@ -74,7 +74,7 @@ const appendPageLinks = (list) => {
   pageDiv.appendChild(ul);
 
   //Loop over pages and add li and a tags for pagination links
-  for (let i = 0; i <= totalPages.length; i += 1) {
+  for (let i = 0; i <= totalPages; i += 1) {
     let li = document.createElement('li');
     let a = document.createElement('a');
     //Add page number text
@@ -100,6 +100,6 @@ const appendPageLinks = (list) => {
   }
 }
 
-//Call function
+//Call functions
 appendPageLinks(studentList);
 showPage(studentList);
