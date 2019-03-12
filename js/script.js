@@ -49,7 +49,7 @@ const showPage = (list, page) => {
       list[i].style.display = 'hide';
     }
   }
-}
+};
 
 
 /***
@@ -78,28 +78,29 @@ const appendPageLinks = (list) => {
     let li = document.createElement('li');
     let a = document.createElement('a');
     //Add page number text
-    a.textContent = i + 1;
+    a.textContent = 'i + 1';
     a.href = '#';
     //Append a tag to li and li to ul
     li.appendChild(a);
     ul.appendChild(li);
 
-    //Display appropriate pages when clicked
-    let aTag = document.querySelectorAll('a');
+  //Display appropriate pages when clicked
+  //Adds event listener to each a tag
+  let aTag = document.querySelectorAll('a');
+    //Call showPage function when clicked
     aTag.addEventListener('click', () => {
-      if (event.target.tagName = 'a') {
-        showPage(studentList);
-      }
-
+        showPage(list, studentList);
     });
+      //Loop over pagination links to remove active class from all links
       for (let i = 0; i <= aTag.length; i += 1) {
         aTag[i].classList.remove('active');
       }
+      //Add active class to link that was just clicked
       event.target.classList.add('active');
   }
-
 }
 
+//Call function
 appendPageLinks(studentList);
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
