@@ -87,21 +87,22 @@ const appendPageLinks = (list) => {
 
 
     //Display appropriate pages when clicked
+    let aTag = document.querySelectorAll('a');
     a.addEventListener('click', (event) => {
-      event.preventDefault();
-      let aTag = document.querySelector('a');
-      if (event.target.elementId = 'a') {
+      if (event.target.tagName = 'a') {
         showPage(studentList);
-        }
-      });
-      for (let i = 1; i <= a.length; i += 1) {
-        a.removeChild();
       }
+    });
+      for (let i = 0; i <= aTag.length; i += 1) {
+        a.classList.remove('active');
+      }
+      event.target.classList.add();
   }
 
 }
-showPage(studentList);
+
 appendPageLinks(studentList);
 
+console.log('hello');
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
