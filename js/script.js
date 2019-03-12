@@ -46,7 +46,7 @@ const showPage = (list, page) => {
     if (i >= minIndex && i <= maxIndex) {
       list[i].style.display = 'block';
     } else {
-      list[i].style.display = 'hide';
+      list[i].style.display = 'none';
     }
   }
 };
@@ -102,3 +102,4 @@ const appendPageLinks = (list) => {
 
 //Call function
 appendPageLinks(studentList);
+showPage(studentList);
