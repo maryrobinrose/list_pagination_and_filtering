@@ -50,16 +50,16 @@ const appendPageLinks = (list) => {
 
     //Loop over pagination links to remove active class from all links, add active class to link that was just clicked
       a.addEventListener('click', () => {
+        event.preventDefault();
         for (let i = 0; i <= a.length; i += 1) {
           a.className.remove('active');
           showPage(studentList, i + 1);
-          event.target.className = 'active';
         }
+        event.target.className = 'active';
       });
     }
   }
 
 //Call functions
 showPage(studentList, 1);
-console.log('hello');
 appendPageLinks(studentList);
