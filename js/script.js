@@ -18,7 +18,7 @@ const showPage = (list, page) => {
       list[i].style.display = 'none';
     }
   }
-};
+}
 
 //Function creates div for list of students and appends page numbers and buttons
 const appendPageLinks = (list) => {
@@ -29,7 +29,7 @@ const appendPageLinks = (list) => {
   const pageDiv = document.createElement('div');
   pageDiv.className = 'pagination';
   //Append it to the .page div
-  let page = document.querySelector('.page');
+  const page = document.querySelector('.page');
   page.appendChild(pageDiv);
 
   //Creates ul to go in div
@@ -47,12 +47,15 @@ const appendPageLinks = (list) => {
     li.appendChild(a);
     ul.appendChild(li);
 
-    //Loop over pagination links to remove active class from all links
-    for (let i = 0; i <= a.length; i += 1) {
+
+    //Loop over pagination links to remove active class from all links, add active class to link that was just clicked
+    for (let i = 0; i <= a; i += 1) {
       a[i].addEventListener('click', () => {
-      let aTag = document.querySelectorAll('a');
-      aTag[0].className = aTag[0].className.remove('active');
-      this.className += ' active';
+        for (let i = 0; i <= a.length; i += 1) {
+          a[i].className.remove('active');
+          showPage(studentList);
+          event.target.className === 'active'
+        }
       });
     }
   }
