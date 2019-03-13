@@ -61,4 +61,5 @@ const appendPageLinks = (list) => {
 
 //Call functions
 showPage(studentList, 1);
+console.log('hello');
 appendPageLinks(studentList);
