@@ -12,10 +12,11 @@ const showPage = (list, page) => {
   for (let i = 0; i < list.length; i += 1) {
     const minIndex = (page * 10) - 10;
     const maxIndex = (page * 10) - 1;
+    const students = studentList[i];
     if (i >= minIndex && i <= maxIndex) {
-      list[i].style.display = 'block';
+      students.style.display = 'block';
     } else {
-      list[i].style.display = 'none';
+      students.style.display = 'none';
     }
   }
 }
@@ -37,7 +38,7 @@ const appendPageLinks = (list) => {
   pageDiv.appendChild(ul);
 
   //Loop over pages and add li and a tags for pagination links
-  for (let i = 1; i < totalPages; i += 1) {
+  for (let i = 0; i < totalPages; i += 1) {
     let li = document.createElement('li');
     let a = document.createElement('a');
     //Add page number text
@@ -49,17 +50,17 @@ const appendPageLinks = (list) => {
 
 
     //Loop over pagination links to remove active class from all links, add active class to link that was just clicked
+
     const aTag = document.querySelectorAll('a');
     for (let i = 0; i <= aTag.length; i += 1) {
       a.addEventListener('click', () => {
         for (let i = 0; i <= aTag.length; i += 1) {
           a.classList.remove('active');
-        }
+          }
         showPage(studentList, i + 1);
         event.target.className = 'active';
-      });
-    }
-
+        });
+      }
     }
   }
 
