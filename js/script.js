@@ -49,17 +49,16 @@ const appendPageLinks = (list) => {
 
 
     //Loop over pagination links to remove active class from all links, add active class to link that was just clicked
-    for (let i = 0; i <= a; i += 1) {
-      a[i].addEventListener('click', () => {
+      a.addEventListener('click', () => {
         for (let i = 0; i <= a.length; i += 1) {
-          a[i].className.remove('active');
+          console.log('hello');
+          a.className.remove('active');
           showPage(studentList);
-          event.target.className === 'active'
+          event.target.className = 'active';
         }
       });
     }
   }
-}
 
 //Call functions
 appendPageLinks(studentList);
