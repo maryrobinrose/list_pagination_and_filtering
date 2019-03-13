@@ -49,14 +49,17 @@ const appendPageLinks = (list) => {
 
 
     //Loop over pagination links to remove active class from all links, add active class to link that was just clicked
+    const aTag = document.querySelectorAll('a');
+    for (let i = 0; i <= aTag.length; i += 1) {
       a.addEventListener('click', () => {
-        event.preventDefault();
-        for (let i = 0; i <= a.length; i += 1) {
-          a.className.remove('active');
-          showPage(studentList, i + 1);
+        for (let i = 0; i <= aTag.length; i += 1) {
+          a.classList.remove('active');
         }
+        showPage(studentList, i + 1);
         event.target.className = 'active';
       });
+    }
+
     }
   }
 
