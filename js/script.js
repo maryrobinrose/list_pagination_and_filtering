@@ -6,7 +6,6 @@ FSJS project 2 - List Filter and Pagination
 
 //Selects all students from main page
 const studentList = document.querySelectorAll('.student-item');
-const studentsPerPage = 10;
 
 //Hide students from list, show select students at a time
 const showPage = (list, page) => {
@@ -61,5 +60,5 @@ const appendPageLinks = (list) => {
   }
 
 //Call functions
-appendPageLinks(studentList);
 showPage(studentList, 1);
+appendPageLinks(studentList);
