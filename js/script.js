@@ -24,7 +24,7 @@ const showPage = (list, page) => {
 //Function creates div for list of students and appends page numbers and buttons
 const appendPageLinks = (list) => {
   //Sets maximum number of students per page
-  const totalPages = Math.ceil(list.length / 10);
+  const totalPages = Math.ceil(studentList.length / 10);
 
   //Creates a div and sets class name to 'pagination'
   const pageDiv = document.createElement('div');
@@ -52,15 +52,15 @@ const appendPageLinks = (list) => {
     //Loop over pagination links to remove active class from all links, add active class to link that was just clicked
 
     const aTag = document.querySelectorAll('a');
-    for (let i = 0; i <= aTag.length; i += 1) {
-      a.addEventListener('click', () => {
-        for (let i = 0; i <= aTag.length; i += 1) {
-          a.classList.remove('active');
-          }
-        showPage(studentList, i + 1);
-        event.target.className = 'active';
-        });
-      }
+      for (let i = 0; i <= aTag.length; i += 1) {
+        a.addEventListener('click', () => {
+          for (let i = 0; i <= aTag.length; i += 1) {
+            a.classList.remove('active');
+            }
+          showPage(studentList, i);
+          event.target.className = 'active';
+          });
+        }
     }
   }
 
