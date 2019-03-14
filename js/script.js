@@ -50,19 +50,26 @@ const appendPageLinks = (list) => {
     ul.appendChild(li);
 
 
-    //Show appropriate students on click
+
+    //Select links
     const aTag = document.querySelectorAll('a');
-       for (let i = 0; i <= aTag.length; i += 1) {
-         a.addEventListener('click', () => {
-           for (let i = 0; i <= aTag.length; i += 1) {
-             showPage(studentList, i);
+      //Loop over all links
+       for (let i = 0; i < aTag.length; i += 1) {
+         //Add event listener to each link
+         aTag[i].addEventListener('click', (event) => {
+           //Loop over all links
+           for (let i = 0; i < aTag.length; i += 1) {
+             //Remove active classes from links
+             aTag[i].classList.remove('active');
            }
+           //Call showPage to display appropriate students
+           showPage(studentList, i + 1);
+           //Add active class to link
+           event.target.className = 'active';
         });
       }
     }
   }
-
-
 
 //Call functions
 showPage(studentList, 1);
