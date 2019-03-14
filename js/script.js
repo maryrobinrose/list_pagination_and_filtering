@@ -50,13 +50,13 @@ const appendPageLinks = (list) => {
     ul.appendChild(li);
 
 
-    //Make links active
+    //Show appropriate students on click
     const aTag = document.querySelectorAll('a');
-     for (let i = 0; i <= aTag.length; i += 1) {
-       a.addEventListener('click', () => {
-         for (let i = 0; i <= aTag.length; i += 1) {
-           showPage(studentList, i);
-         }
+       for (let i = 0; i <= aTag.length; i += 1) {
+         a.addEventListener('click', () => {
+           for (let i = 0; i <= aTag.length; i += 1) {
+             showPage(studentList, i);
+           }
         });
       }
     }
