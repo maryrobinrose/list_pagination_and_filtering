@@ -49,18 +49,15 @@ const appendPageLinks = (list) => {
     ul.appendChild(li);
 
 
-    //Loop over pagination links to remove active class from all links, add active class to link that was just clicked
-    const pageNumber = i + 1;
-    const aTag = document.querySelectorAll('a');
-      for (let i = 0; i <= aTag.length; i += 1) {
-        a.addEventListener('click', () => {
-          showPage(studentList, i);
-          if(pageNumber === parseInt(event.target.textContent)){
-             event.target.className = 'active';
-          } else {
-            a.classList.remove('active');
-          }
 
+    //Loop over pagination links to remove active class from all links, add active class to link that was just clicked
+    const aTag = document.querySelectorAll('a');
+    for (let i = 0; i <= aTag.length; i += 1) {
+      a.addEventListener('click', () => {
+        for (let i = 0; i <= aTag.length; i += 1) {
+          a.classList.remove('active');
+          }
+        showPage(studentList, i);
           });
         }
     }
