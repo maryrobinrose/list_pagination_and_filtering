@@ -6,6 +6,7 @@ FSJS project 2 - List Filter and Pagination
 
 //Selects all students from main page
 const studentList = document.querySelectorAll('.student-item');
+const aTag = document.querySelectorAll('a');
 
 //Hide students from list, show select students at a time
 const showPage = (list, page) => {
@@ -49,17 +50,15 @@ const appendPageLinks = (list) => {
     ul.appendChild(li);
 
 
-
-    //Loop over pagination links to remove active class from all links, add active class to link that was just clicked
+    //Make links active
     const aTag = document.querySelectorAll('a');
-    for (let i = 0; i <= aTag.length; i += 1) {
-      a.addEventListener('click', () => {
-        for (let i = 0; i <= aTag.length; i += 1) {
-          a.classList.remove('active');
-          }
-        showPage(studentList, i);
-          });
-        }
+     for (let i = 0; i <= aTag.length; i += 1) {
+       a.addEventListener('click', () => {
+         for (let i = 0; i <= aTag.length; i += 1) {
+           showPage(studentList, i);
+         }
+        });
+      }
     }
   }
 
