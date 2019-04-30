@@ -4,9 +4,13 @@
 
 #### By **Mary Robin Rose**
 
+## Live Link
+
+https://maryrobinrose.github.io/list_pagination_and_filtering
+
 ## Description
 
-_This project uses progressive enhancement and unobtrusive JavaScript to create multiple pages of a list of students for better user experience. _
+_This project uses progressive enhancement and unobtrusive JavaScript to create multiple pages of a list of students for better user experience._
 
 ## Setup And Installation
 
